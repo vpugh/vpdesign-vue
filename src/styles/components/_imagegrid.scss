@@ -1,0 +1,80 @@
+@import '../styles/variables/all';
+@import '../styles/helpers/cssgrid';
+@import '../styles/base/breakpoints';
+.portfolio {
+    padding: 5rem 0;
+}
+
+.thumbnail {
+    list-style: none;
+    @include mq(tablet, min-width) {
+        display: flex;
+    }
+    img {
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        @include mq(desktop, min-width) {
+            width: 50%;
+            height: 50%;
+        }
+    }
+    div {
+        padding: 0 0 60px 0;
+        @include mq(sm, max-width) {
+            &:not(last-child) {
+                padding: 0 0 30px 0;
+            }
+        }
+        @include mq(tablet, min-width) {
+            align-self: center;
+            padding: 0 30px;
+        }
+    }
+    @include mq(tablet, min-width) {
+        padding: 60px 0;
+    }
+    &:nth-child(odd) {
+        flex-flow: row-reverse;
+        div {
+            @include mq(tablet, min-width) {
+                align-self: center;
+                padding-left: 0;
+                padding-right: 60px;
+            }
+        }
+    }
+    a {
+        color: color(text, base);
+        transition: opacity 400ms ease-in-out;
+        @include mq(tablet, min-width) {
+            font-size: 1.2rem;
+        }
+        &:hover {
+            opacity: .25;
+        }
+    }
+}
+
+.thumbnail--title {
+    font-size: 1.2rem;
+    font-family: $atiza, $serif;
+    margin: 1rem 0;
+    line-height: 1.2;
+    color: color(text, base);
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    @include mq(tablet, min-width) {
+        font-size: 1rem;
+    }
+}
+
+.thumbnail--description {
+    font-size: 2.2rem;
+    font-family: $calluna, $sans-serif;
+    font-weight: bold;
+    @include mq(tablet, min-width) {
+        font-size: 3.2rem;
+        line-height: 1.1;
+        margin: 1.5rem 0;
+    }
+}

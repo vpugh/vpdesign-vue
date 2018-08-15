@@ -1,0 +1,8 @@
+@import '../base/breakpoints';
+@import '../variables/all';
+.listed-service {
+    padding: 10px 30px;
+    border: 1px solid color(text, base);
+    border-radius: 6px;
+    margin-top: 30px;
+}
